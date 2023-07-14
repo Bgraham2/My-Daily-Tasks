@@ -40,6 +40,7 @@ namespace My_Daily_Tasks
             this.buttonAddTask.TabIndex = 0;
             this.buttonAddTask.Text = "Add a New Task";
             this.buttonAddTask.UseVisualStyleBackColor = true;
+            this.buttonAddTask.Click += new System.EventHandler(this.buttonAddTask_Click);
             // 
             // MainForm
             // 

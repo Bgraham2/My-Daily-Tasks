@@ -16,5 +16,11 @@ namespace My_Daily_Tasks
         {
             InitializeComponent();
         }
+
+        private void buttonAddTask_Click(object sender, EventArgs e)
+        {
+            AddTaskForm addTaskForm = new AddTaskForm();
+            addTaskForm.Show();
+        }
     }
 }
