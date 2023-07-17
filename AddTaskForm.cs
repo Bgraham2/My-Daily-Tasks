@@ -21,5 +21,35 @@ namespace My_Daily_Tasks
         {
             this.Close();
         }
+
+        private void checkBoxAllWeek_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxAllWeek.Checked)
+            {
+                checkBoxMonday.CheckState = CheckState.Checked;
+                checkBoxTuesday.CheckState = CheckState.Checked;
+                checkBoxWednesday.CheckState = CheckState.Checked;
+                checkBoxThursday.CheckState = CheckState.Checked;
+                checkBoxFriday.CheckState = CheckState.Checked;
+                checkBoxSaturday.CheckState = CheckState.Checked;
+                checkBoxSunday.CheckState = CheckState.Checked;
+                groupBoxDays.Enabled = false;
+            } else
+            {
+                checkBoxMonday.CheckState = CheckState.Unchecked;
+                checkBoxTuesday.CheckState = CheckState.Unchecked;
+                checkBoxWednesday.CheckState = CheckState.Unchecked;
+                checkBoxThursday.CheckState = CheckState.Unchecked;
+                checkBoxFriday.CheckState = CheckState.Unchecked;
+                checkBoxSaturday.CheckState = CheckState.Unchecked;
+                checkBoxSunday.CheckState = CheckState.Unchecked;
+                groupBoxDays.Enabled = true;
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

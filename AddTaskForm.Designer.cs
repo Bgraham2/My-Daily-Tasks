@@ -70,6 +70,7 @@ namespace My_Daily_Tasks
             this.checkBoxAllWeek.TabIndex = 2;
             this.checkBoxAllWeek.Text = "All Week";
             this.checkBoxAllWeek.UseVisualStyleBackColor = true;
+            this.checkBoxAllWeek.CheckedChanged += new System.EventHandler(this.checkBoxAllWeek_CheckedChanged);
             // 
             // groupBoxDays
             // 
@@ -165,6 +166,7 @@ namespace My_Daily_Tasks
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonClose
             // 
@@ -180,7 +182,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 216);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBoxDays);
