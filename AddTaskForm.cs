@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,8 @@ namespace My_Daily_Tasks
                 checkBoxSaturday.CheckState = CheckState.Checked;
                 checkBoxSunday.CheckState = CheckState.Checked;
                 groupBoxDays.Enabled = false;
-            } else
+            } 
+            else
             {
                 checkBoxMonday.CheckState = CheckState.Unchecked;
                 checkBoxTuesday.CheckState = CheckState.Unchecked;
@@ -49,7 +51,23 @@ namespace My_Daily_Tasks
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            int monday = checkBoxMonday.Checked ? 1 : 0;
+            int tuesday = checkBoxTuesday.Checked ? 1 : 0;
+            int wednesday = checkBoxWednesday.Checked ? 1 : 0;
+            int thursday = checkBoxThursday.Checked ? 1 : 0;
+            int friday = checkBoxFriday.Checked ? 1 : 0;
+            int saturday = checkBoxSaturday.Checked ? 1 : 0;
+            int sunday = checkBoxSunday.Checked ? 1 : 0;
 
+            SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
+            sqlConnection.Open();
+            string sql = "INSERT INTO TASKS VALUES(" + "'" + textBoxTaskName.Text + "'" + "," + monday + "," + tuesday + "," + wednesday + "," + thursday + "," + friday + "," + saturday + "," + sunday + ")";
+            SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
+            sqlDataAdapter.InsertCommand.ExecuteNonQuery();
+            sqlCommand.Dispose();
+            sqlConnection.Close();
         }
     }
 }
