@@ -32,8 +32,8 @@ namespace My_Daily_Tasks
             this.buttonAddTask = new System.Windows.Forms.Button();
             this.labelToday = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewTasks = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTasks)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddTask
@@ -63,28 +63,31 @@ namespace My_Daily_Tasks
             this.buttonUpdate.TabIndex = 2;
             this.buttonUpdate.Text = "Update/Reset";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
-            // dataGridView1
+            // dataGridViewTasks
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(554, 362);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridViewTasks.AllowUserToAddRows = false;
+            this.dataGridViewTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTasks.Location = new System.Drawing.Point(12, 47);
+            this.dataGridViewTasks.Name = "dataGridViewTasks";
+            this.dataGridViewTasks.ReadOnly = true;
+            this.dataGridViewTasks.Size = new System.Drawing.Size(554, 362);
+            this.dataGridViewTasks.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewTasks);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.labelToday);
             this.Controls.Add(this.buttonAddTask);
             this.Name = "MainForm";
             this.Text = "My Daily Tasks";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTasks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,7 +98,7 @@ namespace My_Daily_Tasks
         private System.Windows.Forms.Button buttonAddTask;
         private System.Windows.Forms.Label labelToday;
         private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewTasks;
     }
 }
 

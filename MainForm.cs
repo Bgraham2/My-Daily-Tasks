@@ -14,7 +14,7 @@ namespace My_Daily_Tasks
 {
     public partial class MainForm : Form
     {
-        private ArrayList tasks = new ArrayList();
+        private DataTable tasks = new DataTable();
 
         public MainForm()
         {
@@ -29,22 +29,27 @@ namespace My_Daily_Tasks
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            int index = 0;
             labelToday.Text = DateTime.Today.DayOfWeek.ToString();
+            getTasks();
+        }
 
+        private void getTasks()
+        {
             SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
             sqlConnection.Open();
             string sql = "SELECT TaskName FROM TASKS WHERE " + labelToday.Text + " = 1";
             SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            while (sqlDataReader.Read())
-            {
-                tasks[index] = sqlDataReader.GetValue(0);
-                index++;
-            }
-            sqlDataReader.Close();
-            sqlCommand.Dispose();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(tasks);
+            sqlDataAdapter.Dispose();
             sqlConnection.Close();
+
+            this.dataGridViewTasks.DataSource = tasks;
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            getTasks();
         }
     }
 }
