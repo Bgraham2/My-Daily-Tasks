@@ -45,10 +45,24 @@ namespace My_Daily_Tasks
             sqlConnection.Close();
 
             this.dataGridViewTasks.DataSource = tasks;
+            DataGridViewButtonColumn completeButtonColumn = new DataGridViewButtonColumn();
+            completeButtonColumn.Name = "Complete";
+
+            if (dataGridViewTasks.Columns["Complete"] == null)
+            {
+                dataGridViewTasks.Columns.Add(completeButtonColumn);
+            }
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Delete";
+            if (dataGridViewTasks.Columns["Delete"] == null)
+            {
+                dataGridViewTasks.Columns.Add(deleteButtonColumn);
+            }
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            tasks.Clear();
             getTasks();
         }
     }
