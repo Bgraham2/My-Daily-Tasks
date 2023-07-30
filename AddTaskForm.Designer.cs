@@ -29,6 +29,7 @@ namespace My_Daily_Tasks
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTaskForm));
             this.labelTaskName = new System.Windows.Forms.Label();
             this.textBoxTaskName = new System.Windows.Forms.TextBox();
             this.checkBoxAllWeek = new System.Windows.Forms.CheckBox();
@@ -172,7 +173,7 @@ namespace My_Daily_Tasks
             this.buttonSave.BackColor = System.Drawing.Color.LightGray;
             this.buttonSave.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.SteelBlue;
-            this.buttonSave.Location = new System.Drawing.Point(706, 126);
+            this.buttonSave.Location = new System.Drawing.Point(712, 126);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(100, 45);
             this.buttonSave.TabIndex = 4;
@@ -205,6 +206,7 @@ namespace My_Daily_Tasks
             this.Controls.Add(this.checkBoxAllWeek);
             this.Controls.Add(this.textBoxTaskName);
             this.Controls.Add(this.labelTaskName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddTaskForm";
             this.Text = "Add Task";
             this.groupBoxDays.ResumeLayout(false);
