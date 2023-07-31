@@ -45,15 +45,31 @@ namespace My_Daily_Tasks
             sqlConnection.Close();
 
             this.dataGridViewTasks.DataSource = tasks;
+
+            DataGridViewColumn taskColumn = dataGridViewTasks.Columns[0];
+            taskColumn.Width = 335;
+
             DataGridViewButtonColumn completeButtonColumn = new DataGridViewButtonColumn();
-            completeButtonColumn.Name = "Complete";
+            completeButtonColumn.Width = 125;
+            completeButtonColumn.HeaderText = "Complete";
+            completeButtonColumn.Text = "Complete";
+            completeButtonColumn.UseColumnTextForButtonValue = true;
+            completeButtonColumn.FlatStyle = FlatStyle.Flat;
+            completeButtonColumn.DefaultCellStyle.BackColor = Color.Green;
 
             if (dataGridViewTasks.Columns["Complete"] == null)
             {
                 dataGridViewTasks.Columns.Add(completeButtonColumn);
             }
+
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
-            deleteButtonColumn.Name = "Delete";
+            deleteButtonColumn.Width = 90;
+            deleteButtonColumn.HeaderText = "Delete";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            deleteButtonColumn.FlatStyle = FlatStyle.Flat;
+            deleteButtonColumn.DefaultCellStyle.BackColor = Color.Red;
+
             if (dataGridViewTasks.Columns["Delete"] == null)
             {
                 dataGridViewTasks.Columns.Add(deleteButtonColumn);
