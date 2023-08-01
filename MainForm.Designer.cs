@@ -108,6 +108,7 @@ namespace My_Daily_Tasks
             this.dataGridViewTasks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewTasks.Size = new System.Drawing.Size(554, 362);
             this.dataGridViewTasks.TabIndex = 3;
+            this.dataGridViewTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTasks_CellContentClick);
             // 
             // MainForm
             // 

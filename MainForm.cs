@@ -56,6 +56,7 @@ namespace My_Daily_Tasks
             completeButtonColumn.UseColumnTextForButtonValue = true;
             completeButtonColumn.FlatStyle = FlatStyle.Flat;
             completeButtonColumn.DefaultCellStyle.BackColor = Color.Green;
+            completeButtonColumn.DefaultCellStyle.SelectionBackColor = Color.Green;
 
             if (dataGridViewTasks.Columns["Complete"] == null)
             {
@@ -69,6 +70,7 @@ namespace My_Daily_Tasks
             deleteButtonColumn.UseColumnTextForButtonValue = true;
             deleteButtonColumn.FlatStyle = FlatStyle.Flat;
             deleteButtonColumn.DefaultCellStyle.BackColor = Color.Red;
+            deleteButtonColumn.DefaultCellStyle.SelectionBackColor = Color.Red;
 
             if (dataGridViewTasks.Columns["Delete"] == null)
             {
@@ -80,6 +82,15 @@ namespace My_Daily_Tasks
         {
             tasks.Clear();
             getTasks();
+        }
+
+        private void dataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(e.ColumnIndex + " | " + e.RowIndex);
+            if (e.ColumnIndex == 1 & e.RowIndex >= 0)
+            {
+                dataGridViewTasks.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.Green;
+            }
         }
     }
 }
