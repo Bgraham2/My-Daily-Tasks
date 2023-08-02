@@ -86,10 +86,22 @@ namespace My_Daily_Tasks
 
         private void dataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine(e.ColumnIndex + " | " + e.RowIndex);
             if (e.ColumnIndex == 1 & e.RowIndex >= 0)
             {
                 dataGridViewTasks.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.Green;
+            }
+
+            if (e.ColumnIndex == 2 & e.RowIndex >= 0)
+            {
+                SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
+                sqlConnection.Open();
+                string sql = "DELETE FROM TASKS WHERE TaskName=" +"'" + dataGridViewTasks.Rows[e.RowIndex].Cells["TaskName"].Value.ToString() + "'";
+                SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+                sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
+                sqlDataAdapter.InsertCommand.ExecuteNonQuery();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
             }
         }
     }
