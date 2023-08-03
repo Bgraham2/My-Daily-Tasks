@@ -50,7 +50,7 @@ namespace My_Daily_Tasks
             // 
             this.labelTaskName.AutoSize = true;
             this.labelTaskName.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTaskName.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelTaskName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelTaskName.Location = new System.Drawing.Point(12, 9);
             this.labelTaskName.Name = "labelTaskName";
             this.labelTaskName.Size = new System.Drawing.Size(159, 27);
@@ -70,7 +70,7 @@ namespace My_Daily_Tasks
             // 
             this.checkBoxAllWeek.AutoSize = true;
             this.checkBoxAllWeek.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxAllWeek.ForeColor = System.Drawing.Color.SteelBlue;
+            this.checkBoxAllWeek.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checkBoxAllWeek.Location = new System.Drawing.Point(406, 8);
             this.checkBoxAllWeek.Name = "checkBoxAllWeek";
             this.checkBoxAllWeek.Size = new System.Drawing.Size(130, 31);
@@ -89,7 +89,7 @@ namespace My_Daily_Tasks
             this.groupBoxDays.Controls.Add(this.checkBoxTuesday);
             this.groupBoxDays.Controls.Add(this.checkBoxMonday);
             this.groupBoxDays.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDays.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBoxDays.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBoxDays.Location = new System.Drawing.Point(12, 45);
             this.groupBoxDays.Name = "groupBoxDays";
             this.groupBoxDays.Size = new System.Drawing.Size(800, 75);
@@ -170,9 +170,9 @@ namespace My_Daily_Tasks
             // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.LightGray;
+            this.buttonSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonSave.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.ForeColor = System.Drawing.Color.SteelBlue;
+            this.buttonSave.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonSave.Location = new System.Drawing.Point(712, 126);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(100, 45);
@@ -183,9 +183,9 @@ namespace My_Daily_Tasks
             // 
             // buttonClose
             // 
-            this.buttonClose.BackColor = System.Drawing.Color.LightGray;
+            this.buttonClose.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonClose.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.ForeColor = System.Drawing.Color.SteelBlue;
+            this.buttonClose.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonClose.Location = new System.Drawing.Point(591, 126);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(100, 45);
@@ -198,7 +198,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(818, 181);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSave);

@@ -41,9 +41,9 @@ namespace My_Daily_Tasks
             // 
             // buttonAddTask
             // 
-            this.buttonAddTask.BackColor = System.Drawing.Color.LightGray;
+            this.buttonAddTask.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonAddTask.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddTask.ForeColor = System.Drawing.Color.SteelBlue;
+            this.buttonAddTask.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonAddTask.Location = new System.Drawing.Point(340, 415);
             this.buttonAddTask.Name = "buttonAddTask";
             this.buttonAddTask.Size = new System.Drawing.Size(152, 37);
@@ -56,7 +56,7 @@ namespace My_Daily_Tasks
             // 
             this.labelToday.AutoSize = true;
             this.labelToday.Font = new System.Drawing.Font("Lucida Handwriting", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelToday.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelToday.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelToday.Location = new System.Drawing.Point(225, 8);
             this.labelToday.Name = "labelToday";
             this.labelToday.Size = new System.Drawing.Size(109, 36);
@@ -65,9 +65,9 @@ namespace My_Daily_Tasks
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.LightGray;
+            this.buttonUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonUpdate.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.ForeColor = System.Drawing.Color.SteelBlue;
+            this.buttonUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonUpdate.Location = new System.Drawing.Point(78, 415);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(195, 37);
@@ -82,7 +82,7 @@ namespace My_Daily_Tasks
             this.dataGridViewTasks.AllowUserToDeleteRows = false;
             this.dataGridViewTasks.AllowUserToResizeColumns = false;
             this.dataGridViewTasks.AllowUserToResizeRows = false;
-            this.dataGridViewTasks.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dataGridViewTasks.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,7 +114,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(583, 484);
             this.Controls.Add(this.dataGridViewTasks);
             this.Controls.Add(this.buttonUpdate);
