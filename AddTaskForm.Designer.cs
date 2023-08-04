@@ -173,7 +173,7 @@ namespace My_Daily_Tasks
             this.buttonSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonSave.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonSave.Location = new System.Drawing.Point(712, 126);
+            this.buttonSave.Location = new System.Drawing.Point(706, 126);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(100, 45);
             this.buttonSave.TabIndex = 4;

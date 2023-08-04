@@ -72,12 +72,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DailyTasksDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LocalDatabase.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddTaskForm.resx">

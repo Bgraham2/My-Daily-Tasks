@@ -59,15 +59,16 @@ namespace My_Daily_Tasks
             int saturday = checkBoxSaturday.Checked ? 1 : 0;
             int sunday = checkBoxSunday.Checked ? 1 : 0;
 
-            SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
-            sqlConnection.Open();
-            string sql = "INSERT INTO TASKS VALUES(" + "'" + textBoxTaskName.Text + "'" + "," + monday + "," + tuesday + "," + wednesday + "," + thursday + "," + friday + "," + saturday + "," + sunday + ")";
-            SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-            sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
-            sqlDataAdapter.InsertCommand.ExecuteNonQuery();
-            sqlCommand.Dispose();
-            sqlConnection.Close();
+            LocalDatabase database = new LocalDatabase();
+            bool status = database.writeNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+
+            if (status)
+            {
+                String message = "New Task " + textBoxTaskName.Text + " added to the Database!";
+                String title = "Task Added!";
+                Messages messages = new Messages(message, title);
+            }
+            
         }
     }
 }
