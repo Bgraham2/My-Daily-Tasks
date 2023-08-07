@@ -30,8 +30,8 @@ namespace My_Daily_Tasks
             Int32 status = sqlDataAdapter.InsertCommand.ExecuteNonQuery();
             sqlCommand.Dispose();
             sqlConnection.Close();
-
-            if (status == 1)
+            
+            if (status.Equals(1))
             {
                 return true;
             } 

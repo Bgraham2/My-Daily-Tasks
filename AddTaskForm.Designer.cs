@@ -49,19 +49,19 @@ namespace My_Daily_Tasks
             // labelTaskName
             // 
             this.labelTaskName.AutoSize = true;
-            this.labelTaskName.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTaskName.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTaskName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelTaskName.Location = new System.Drawing.Point(12, 9);
             this.labelTaskName.Name = "labelTaskName";
-            this.labelTaskName.Size = new System.Drawing.Size(159, 27);
+            this.labelTaskName.Size = new System.Drawing.Size(149, 27);
             this.labelTaskName.TabIndex = 0;
             this.labelTaskName.Text = "Task Name:";
             // 
             // textBoxTaskName
             // 
             this.textBoxTaskName.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTaskName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.textBoxTaskName.Location = new System.Drawing.Point(177, 5);
+            this.textBoxTaskName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxTaskName.Location = new System.Drawing.Point(167, 5);
             this.textBoxTaskName.Name = "textBoxTaskName";
             this.textBoxTaskName.Size = new System.Drawing.Size(195, 34);
             this.textBoxTaskName.TabIndex = 1;

@@ -64,11 +64,16 @@ namespace My_Daily_Tasks
 
             if (status)
             {
-                String message = "New Task " + textBoxTaskName.Text + " added to the Database!";
-                String title = "Task Added!";
-                Messages messages = new Messages(message, title);
+                Messages messages = new Messages("New Task " + textBoxTaskName.Text + " added to the Database!", "Task Added!");
+                messages.displayMessage();
             }
-            
+            else
+            {
+                Messages messages = new Messages("New Task " + textBoxTaskName.Text + " failed writing to the Database!", "Task Add Failed!");
+                messages.displayMessage();
+            }
+
+            this.Close();
         }
     }
 }
