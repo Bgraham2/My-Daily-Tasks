@@ -15,6 +15,7 @@ namespace My_Daily_Tasks
     public partial class MainForm : Form
     {
         private DataTable tasks = new DataTable();
+        private String today = DateTime.Today.DayOfWeek.ToString();
 
         public MainForm()
         {
@@ -29,22 +30,13 @@ namespace My_Daily_Tasks
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            labelToday.Text = DateTime.Today.DayOfWeek.ToString();
+            labelToday.Text = today;
+            this.dataGridViewTasks.DataSource = returnTasks(today);
             getTasks();
         }
 
         private void getTasks()
         {
-            SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
-            sqlConnection.Open();
-            string sql = "SELECT TaskName FROM TASKS WHERE " + labelToday.Text + " = 1";
-            SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            sqlDataAdapter.Fill(tasks);
-            sqlDataAdapter.Dispose();
-            sqlConnection.Close();
-
-            this.dataGridViewTasks.DataSource = tasks;
 
             DataGridViewColumn taskColumn = dataGridViewTasks.Columns[0];
             taskColumn.Width = 335;
@@ -80,8 +72,10 @@ namespace My_Daily_Tasks
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            tasks.Clear();
-            getTasks();
+
+            this.dataGridViewTasks.DataSource = returnTasks(today);
+            dataGridViewTasks.Update();
+            dataGridViewTasks.Refresh();
         }
 
         private void dataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,16 +87,15 @@ namespace My_Daily_Tasks
 
             if (e.ColumnIndex == 2 & e.RowIndex >= 0)
             {
-                SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
-                sqlConnection.Open();
-                string sql = "DELETE FROM TASKS WHERE TaskName=" +"'" + dataGridViewTasks.Rows[e.RowIndex].Cells["TaskName"].Value.ToString() + "'";
-                SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-                sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
-                sqlDataAdapter.InsertCommand.ExecuteNonQuery();
-                sqlCommand.Dispose();
-                sqlConnection.Close();
+                LocalDatabase database = new LocalDatabase();
+                database.deleteTask(dataGridViewTasks.Rows[e.RowIndex].Cells["TaskName"].Value.ToString());
             }
+        }
+
+        private DataTable returnTasks(String date)
+        {
+            LocalDatabase database = new LocalDatabase();
+            return database.getTasks(date);
         }
     }
 }

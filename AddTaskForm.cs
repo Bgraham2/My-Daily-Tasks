@@ -60,18 +60,7 @@ namespace My_Daily_Tasks
             int sunday = checkBoxSunday.Checked ? 1 : 0;
 
             LocalDatabase database = new LocalDatabase();
-            bool status = database.writeNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
-
-            if (status)
-            {
-                Messages messages = new Messages("New Task " + textBoxTaskName.Text + " added to the Database!", "Task Added!");
-                messages.displayMessage();
-            }
-            else
-            {
-                Messages messages = new Messages("New Task " + textBoxTaskName.Text + " failed writing to the Database!", "Task Add Failed!");
-                messages.displayMessage();
-            }
+            database.writeNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
 
             this.Close();
         }

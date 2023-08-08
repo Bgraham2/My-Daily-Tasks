@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,29 +17,41 @@ namespace My_Daily_Tasks
             sqlConnection.Open();
         }
 
-        public bool writeNewTask(String taskName, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday)
+        public void writeNewTask(String taskName, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday)
         {
             string sql = "INSERT INTO TASKS VALUES(" + "'" + taskName + "'" + "," + monday + "," + tuesday + "," + wednesday + "," + thursday + "," + friday + "," + saturday + "," + sunday + ")";
-            return dBInteraction(sql);
+            dBInteraction(sql);
         }
 
-        private bool dBInteraction(String sql)
+        public void deleteTask(String taskName)
+        {
+            string sql = "DELETE FROM TASKS WHERE TaskName='" + taskName + "'";
+            dBInteraction(sql);
+        }
+
+        private void dBInteraction(String sql)
         {
             
             SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
             sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
-            Int32 status = sqlDataAdapter.InsertCommand.ExecuteNonQuery();
+            sqlDataAdapter.InsertCommand.ExecuteNonQuery();
             sqlCommand.Dispose();
             sqlConnection.Close();
-            
-            if (status.Equals(1))
-            {
-                return true;
-            } 
-            else
-            {
-                return false;
-            }
+
+        }
+
+        public DataTable getTasks(String date)
+        {
+            DataTable tasks = new DataTable();
+
+            string sql = "SELECT TaskName FROM TASKS WHERE " + date + " = 1";
+            SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(tasks);
+            sqlDataAdapter.Dispose();
+            sqlConnection.Close();
+
+            return tasks;
         }
     }
 }
