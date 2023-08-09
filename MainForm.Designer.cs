@@ -44,7 +44,7 @@ namespace My_Daily_Tasks
             this.buttonAddTask.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonAddTask.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddTask.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAddTask.Location = new System.Drawing.Point(340, 415);
+            this.buttonAddTask.Location = new System.Drawing.Point(414, 415);
             this.buttonAddTask.Name = "buttonAddTask";
             this.buttonAddTask.Size = new System.Drawing.Size(152, 37);
             this.buttonAddTask.TabIndex = 0;
@@ -68,13 +68,13 @@ namespace My_Daily_Tasks
             this.buttonUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonUpdate.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonUpdate.Location = new System.Drawing.Point(78, 415);
+            this.buttonUpdate.Location = new System.Drawing.Point(12, 415);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(195, 37);
+            this.buttonUpdate.Size = new System.Drawing.Size(152, 37);
             this.buttonUpdate.TabIndex = 2;
-            this.buttonUpdate.Text = "Update/Reset";
+            this.buttonUpdate.Text = "Reset";
             this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // dataGridViewTasks
             // 

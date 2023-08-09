@@ -12,6 +12,7 @@ namespace My_Daily_Tasks
     {
         private static SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
         private SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+
         public LocalDatabase()
         {
             sqlConnection.Open();
@@ -31,13 +32,11 @@ namespace My_Daily_Tasks
 
         private void dBInteraction(String sql)
         {
-            
             SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
             sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
             sqlDataAdapter.InsertCommand.ExecuteNonQuery();
             sqlCommand.Dispose();
             sqlConnection.Close();
-
         }
 
         public DataTable getTasks(String date)

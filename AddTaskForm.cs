@@ -13,6 +13,7 @@ namespace My_Daily_Tasks
 {
     public partial class AddTaskForm : Form
     {
+
         public AddTaskForm()
         {
             InitializeComponent();
@@ -27,25 +28,11 @@ namespace My_Daily_Tasks
         {
             if(checkBoxAllWeek.Checked)
             {
-                checkBoxMonday.CheckState = CheckState.Checked;
-                checkBoxTuesday.CheckState = CheckState.Checked;
-                checkBoxWednesday.CheckState = CheckState.Checked;
-                checkBoxThursday.CheckState = CheckState.Checked;
-                checkBoxFriday.CheckState = CheckState.Checked;
-                checkBoxSaturday.CheckState = CheckState.Checked;
-                checkBoxSunday.CheckState = CheckState.Checked;
-                groupBoxDays.Enabled = false;
+                checkBoxChecked();
             } 
             else
             {
-                checkBoxMonday.CheckState = CheckState.Unchecked;
-                checkBoxTuesday.CheckState = CheckState.Unchecked;
-                checkBoxWednesday.CheckState = CheckState.Unchecked;
-                checkBoxThursday.CheckState = CheckState.Unchecked;
-                checkBoxFriday.CheckState = CheckState.Unchecked;
-                checkBoxSaturday.CheckState = CheckState.Unchecked;
-                checkBoxSunday.CheckState = CheckState.Unchecked;
-                groupBoxDays.Enabled = true;
+                checkBoxUnchecked();
             }
         }
 
@@ -63,6 +50,30 @@ namespace My_Daily_Tasks
             database.writeNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
 
             this.Close();
+        }
+
+        private void checkBoxChecked()
+        {
+            checkBoxMonday.CheckState = CheckState.Checked;
+            checkBoxTuesday.CheckState = CheckState.Checked;
+            checkBoxWednesday.CheckState = CheckState.Checked;
+            checkBoxThursday.CheckState = CheckState.Checked;
+            checkBoxFriday.CheckState = CheckState.Checked;
+            checkBoxSaturday.CheckState = CheckState.Checked;
+            checkBoxSunday.CheckState = CheckState.Checked;
+            groupBoxDays.Enabled = false;
+        }
+
+        private void checkBoxUnchecked()
+        {
+            checkBoxMonday.CheckState = CheckState.Unchecked;
+            checkBoxTuesday.CheckState = CheckState.Unchecked;
+            checkBoxWednesday.CheckState = CheckState.Unchecked;
+            checkBoxThursday.CheckState = CheckState.Unchecked;
+            checkBoxFriday.CheckState = CheckState.Unchecked;
+            checkBoxSaturday.CheckState = CheckState.Unchecked;
+            checkBoxSunday.CheckState = CheckState.Unchecked;
+            groupBoxDays.Enabled = true;
         }
     }
 }

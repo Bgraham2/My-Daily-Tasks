@@ -32,12 +32,42 @@ namespace My_Daily_Tasks
         {
             labelToday.Text = today;
             this.dataGridViewTasks.DataSource = returnTasks(today);
-            getTasks();
+            createDataGridView();
         }
 
-        private void getTasks()
+        private void buttonReset_Click(object sender, EventArgs e)
         {
+            this.dataGridViewTasks.DataSource = returnTasks(today);
+            dataGridViewTasks.Update();
+            dataGridViewTasks.Refresh();
+        }
 
+        private void dataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(e.ColumnIndex + " Column | " + e.RowIndex + " Row");
+            if (e.ColumnIndex == 0 & e.RowIndex >= 0)
+            {
+                dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;
+            }
+
+            if (e.ColumnIndex == 1 & e.RowIndex >= 0)
+            {
+                LocalDatabase database = new LocalDatabase();
+                database.deleteTask(dataGridViewTasks.Rows[e.RowIndex].Cells["TaskName"].Value.ToString());
+                this.dataGridViewTasks.DataSource = returnTasks(today);
+                dataGridViewTasks.Update();
+                dataGridViewTasks.Refresh();
+            }
+        }
+
+        private DataTable returnTasks(String date)
+        {
+            LocalDatabase database = new LocalDatabase();
+            return database.getTasks(date);
+        }
+
+        private void createDataGridView()
+        {
             DataGridViewColumn taskColumn = dataGridViewTasks.Columns[0];
             taskColumn.Width = 335;
 
@@ -68,34 +98,6 @@ namespace My_Daily_Tasks
             {
                 dataGridViewTasks.Columns.Add(deleteButtonColumn);
             }
-        }
-
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-
-            this.dataGridViewTasks.DataSource = returnTasks(today);
-            dataGridViewTasks.Update();
-            dataGridViewTasks.Refresh();
-        }
-
-        private void dataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 1 & e.RowIndex >= 0)
-            {
-                dataGridViewTasks.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.Green;
-            }
-
-            if (e.ColumnIndex == 2 & e.RowIndex >= 0)
-            {
-                LocalDatabase database = new LocalDatabase();
-                database.deleteTask(dataGridViewTasks.Rows[e.RowIndex].Cells["TaskName"].Value.ToString());
-            }
-        }
-
-        private DataTable returnTasks(String date)
-        {
-            LocalDatabase database = new LocalDatabase();
-            return database.getTasks(date);
         }
     }
 }
