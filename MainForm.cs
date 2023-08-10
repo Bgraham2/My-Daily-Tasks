@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace My_Daily_Tasks
@@ -24,7 +17,7 @@ namespace My_Daily_Tasks
 
         private void buttonAddTask_Click(object sender, EventArgs e)
         {
-            AddTaskForm addTaskForm = new AddTaskForm();
+            AddTaskForm addTaskForm = new AddTaskForm(dataGridViewTasks, today);
             addTaskForm.Show();
         }
 
@@ -44,7 +37,6 @@ namespace My_Daily_Tasks
 
         private void dataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine(e.ColumnIndex + " Column | " + e.RowIndex + " Row");
             if (e.ColumnIndex == 0 & e.RowIndex >= 0)
             {
                 dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;

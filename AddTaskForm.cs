@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace My_Daily_Tasks
 {
     public partial class AddTaskForm : Form
     {
-
-        public AddTaskForm()
+        private DataGridView data;
+        private string today;
+        public AddTaskForm(DataGridView dataGridView, string today)
         {
             InitializeComponent();
+            this.data = dataGridView;
+            this.today = today;
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -49,7 +44,16 @@ namespace My_Daily_Tasks
             LocalDatabase database = new LocalDatabase();
             database.writeNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
 
+            updateDataGridView(database);
+
             this.Close();
+        }
+
+        private void updateDataGridView(LocalDatabase database)
+        {
+            data.DataSource = database.getTasks(today);
+            data.Update();
+            data.Refresh();
         }
 
         private void checkBoxChecked()
