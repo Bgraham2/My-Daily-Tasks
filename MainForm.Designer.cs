@@ -50,7 +50,7 @@ namespace My_Daily_Tasks
             this.buttonAddTask.TabIndex = 0;
             this.buttonAddTask.Text = "Add a New Task";
             this.buttonAddTask.UseVisualStyleBackColor = false;
-            this.buttonAddTask.Click += new System.EventHandler(this.buttonAddTask_Click);
+            this.buttonAddTask.Click += new System.EventHandler(this.ButtonAddTask_Click);
             // 
             // labelToday
             // 
@@ -74,7 +74,7 @@ namespace My_Daily_Tasks
             this.buttonUpdate.TabIndex = 2;
             this.buttonUpdate.Text = "Reset";
             this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonReset_Click);
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
             // dataGridViewTasks
             // 
@@ -108,7 +108,7 @@ namespace My_Daily_Tasks
             this.dataGridViewTasks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewTasks.Size = new System.Drawing.Size(554, 362);
             this.dataGridViewTasks.TabIndex = 3;
-            this.dataGridViewTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTasks_CellContentClick);
+            this.dataGridViewTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewTasks_CellContentClick);
             // 
             // MainForm
             // 

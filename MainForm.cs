@@ -7,15 +7,14 @@ namespace My_Daily_Tasks
 {
     public partial class MainForm : Form
     {
-        private DataTable tasks = new DataTable();
-        private String today = DateTime.Today.DayOfWeek.ToString();
+        private readonly String today = DateTime.Today.DayOfWeek.ToString();
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void buttonAddTask_Click(object sender, EventArgs e)
+        private void ButtonAddTask_Click(object sender, EventArgs e)
         {
             AddTaskForm addTaskForm = new AddTaskForm(dataGridViewTasks, today);
             addTaskForm.Show();
@@ -24,51 +23,53 @@ namespace My_Daily_Tasks
         private void MainForm_Load(object sender, EventArgs e)
         {
             labelToday.Text = today;
-            this.dataGridViewTasks.DataSource = returnTasks(today);
-            createDataGridView();
+            dataGridViewTasks.DataSource = ReturnTasks(today);
+            CreateDataGridView();
         }
 
-        private void buttonReset_Click(object sender, EventArgs e)
+        private void ButtonReset_Click(object sender, EventArgs e)
         {
-            this.dataGridViewTasks.DataSource = returnTasks(today);
+            dataGridViewTasks.DataSource = ReturnTasks(today);
             dataGridViewTasks.Update();
             dataGridViewTasks.Refresh();
         }
 
-        private void dataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 & e.RowIndex >= 0)
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;
             }
 
-            if (e.ColumnIndex == 1 & e.RowIndex >= 0)
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0)
             {
                 LocalDatabase database = new LocalDatabase();
-                database.deleteTask(dataGridViewTasks.Rows[e.RowIndex].Cells["TaskName"].Value.ToString());
-                this.dataGridViewTasks.DataSource = returnTasks(today);
+                database.DeleteTask(dataGridViewTasks.Rows[e.RowIndex].Cells["TaskName"].Value.ToString());
+                dataGridViewTasks.DataSource = ReturnTasks(today);
                 dataGridViewTasks.Update();
                 dataGridViewTasks.Refresh();
             }
         }
 
-        private DataTable returnTasks(String date)
+        private DataTable ReturnTasks(String date)
         {
             LocalDatabase database = new LocalDatabase();
-            return database.getTasks(date);
+            return database.GetTasks(date);
         }
 
-        private void createDataGridView()
+        private void CreateDataGridView()
         {
             DataGridViewColumn taskColumn = dataGridViewTasks.Columns[0];
             taskColumn.Width = 335;
 
-            DataGridViewButtonColumn completeButtonColumn = new DataGridViewButtonColumn();
-            completeButtonColumn.Width = 125;
-            completeButtonColumn.HeaderText = "Complete";
-            completeButtonColumn.Text = "Complete";
-            completeButtonColumn.UseColumnTextForButtonValue = true;
-            completeButtonColumn.FlatStyle = FlatStyle.Flat;
+            DataGridViewButtonColumn completeButtonColumn = new DataGridViewButtonColumn
+            {
+                Width = 125,
+                HeaderText = "Complete",
+                Text = "Complete",
+                UseColumnTextForButtonValue = true,
+                FlatStyle = FlatStyle.Flat
+            };
             completeButtonColumn.DefaultCellStyle.BackColor = Color.Green;
             completeButtonColumn.DefaultCellStyle.SelectionBackColor = Color.Green;
 
@@ -77,12 +78,14 @@ namespace My_Daily_Tasks
                 dataGridViewTasks.Columns.Add(completeButtonColumn);
             }
 
-            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
-            deleteButtonColumn.Width = 90;
-            deleteButtonColumn.HeaderText = "Delete";
-            deleteButtonColumn.Text = "Delete";
-            deleteButtonColumn.UseColumnTextForButtonValue = true;
-            deleteButtonColumn.FlatStyle = FlatStyle.Flat;
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn
+            {
+                Width = 90,
+                HeaderText = "Delete",
+                Text = "Delete",
+                UseColumnTextForButtonValue = true,
+                FlatStyle = FlatStyle.Flat
+            };
             deleteButtonColumn.DefaultCellStyle.BackColor = Color.Red;
             deleteButtonColumn.DefaultCellStyle.SelectionBackColor = Color.Red;
 

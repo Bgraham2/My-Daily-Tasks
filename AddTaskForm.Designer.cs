@@ -77,7 +77,7 @@ namespace My_Daily_Tasks
             this.checkBoxAllWeek.TabIndex = 2;
             this.checkBoxAllWeek.Text = "All Week";
             this.checkBoxAllWeek.UseVisualStyleBackColor = true;
-            this.checkBoxAllWeek.CheckedChanged += new System.EventHandler(this.checkBoxAllWeek_CheckedChanged);
+            this.checkBoxAllWeek.CheckedChanged += new System.EventHandler(this.CheckBoxAllWeek_CheckedChanged);
             // 
             // groupBoxDays
             // 
@@ -179,7 +179,7 @@ namespace My_Daily_Tasks
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // buttonClose
             // 
@@ -192,7 +192,7 @@ namespace My_Daily_Tasks
             this.buttonClose.TabIndex = 5;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // AddTaskForm
             // 

@@ -5,33 +5,34 @@ namespace My_Daily_Tasks
 {
     public partial class AddTaskForm : Form
     {
-        private DataGridView data;
-        private string today;
+        private readonly DataGridView data;
+        private readonly string today;
+
         public AddTaskForm(DataGridView dataGridView, string today)
         {
             InitializeComponent();
-            this.data = dataGridView;
+            data = dataGridView;
             this.today = today;
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void checkBoxAllWeek_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxAllWeek_CheckedChanged(object sender, EventArgs e)
         {
             if(checkBoxAllWeek.Checked)
             {
-                checkBoxChecked();
+                CheckBoxChecked();
             } 
             else
             {
-                checkBoxUnchecked();
+                CheckBoxUnchecked();
             }
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
             int monday = checkBoxMonday.Checked ? 1 : 0;
             int tuesday = checkBoxTuesday.Checked ? 1 : 0;
@@ -42,21 +43,21 @@ namespace My_Daily_Tasks
             int sunday = checkBoxSunday.Checked ? 1 : 0;
 
             LocalDatabase database = new LocalDatabase();
-            database.writeNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+            database.WriteNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
 
-            updateDataGridView(database);
+            UpdateDataGridView(database);
 
-            this.Close();
+            Close();
         }
 
-        private void updateDataGridView(LocalDatabase database)
+        private void UpdateDataGridView(LocalDatabase database)
         {
-            data.DataSource = database.getTasks(today);
+            data.DataSource = database.GetTasks(today);
             data.Update();
             data.Refresh();
         }
 
-        private void checkBoxChecked()
+        private void CheckBoxChecked()
         {
             checkBoxMonday.CheckState = CheckState.Checked;
             checkBoxTuesday.CheckState = CheckState.Checked;
@@ -68,7 +69,7 @@ namespace My_Daily_Tasks
             groupBoxDays.Enabled = false;
         }
 
-        private void checkBoxUnchecked()
+        private void CheckBoxUnchecked()
         {
             checkBoxMonday.CheckState = CheckState.Unchecked;
             checkBoxTuesday.CheckState = CheckState.Unchecked;
