@@ -7,6 +7,7 @@ namespace My_Daily_Tasks
     {
         private readonly DataGridView data;
         private readonly string today;
+        private readonly Validation validation = new Validation();
 
         public AddTaskForm(DataGridView dataGridView, string today)
         {
@@ -42,12 +43,22 @@ namespace My_Daily_Tasks
             int saturday = checkBoxSaturday.Checked ? 1 : 0;
             int sunday = checkBoxSunday.Checked ? 1 : 0;
 
-            LocalDatabase database = new LocalDatabase();
-            database.WriteNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+            string validText = validation.ValidateTaskName(textBoxTaskName.Text);
 
-            UpdateDataGridView(database);
+            if (validText == "Passed")
+            {
+                LocalDatabase database = new LocalDatabase();
+                database.WriteNewTask(textBoxTaskName.Text, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
 
-            Close();
+                UpdateDataGridView(database);
+
+                Close();
+            }
+            else
+            {
+
+            }
+            
         }
 
         private void UpdateDataGridView(LocalDatabase database)
