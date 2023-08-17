@@ -54,6 +54,7 @@ namespace My_Daily_Tasks
             this.buttonOK.TabIndex = 1;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = false;
+            this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // MessageForm
             // 

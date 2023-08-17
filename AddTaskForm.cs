@@ -56,7 +56,9 @@ namespace My_Daily_Tasks
             }
             else
             {
-
+                MessageForm message = new MessageForm(validText);
+                message.Show();
+                textBoxTaskName.Clear();
             }
             
         }
