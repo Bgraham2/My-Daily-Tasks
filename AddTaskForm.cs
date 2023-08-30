@@ -52,12 +52,13 @@ namespace My_Daily_Tasks
 
                 UpdateDataGridView(database);
 
+                CreateMessage(textBoxTaskName.Text + " added to list!");
+
                 Close();
             }
             else
             {
-                MessageForm message = new MessageForm(validText);
-                message.Show();
+                CreateMessage(validText);
                 textBoxTaskName.Clear();
             }
             
@@ -92,6 +93,12 @@ namespace My_Daily_Tasks
             checkBoxSaturday.CheckState = CheckState.Unchecked;
             checkBoxSunday.CheckState = CheckState.Unchecked;
             groupBoxDays.Enabled = true;
+        }
+
+        private void CreateMessage(String text)
+        {
+            MessageForm message = new MessageForm(text);
+            message.Show();
         }
     }
 }
