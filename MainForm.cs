@@ -8,16 +8,11 @@ namespace My_Daily_Tasks
     public partial class MainForm : Form
     {
         private readonly String today = DateTime.Today.DayOfWeek.ToString();
+        private int taskCompleted = 0;
 
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void ButtonAddTask_Click(object sender, EventArgs e)
-        {
-            AddTaskForm addTaskForm = new AddTaskForm(dataGridViewTasks, today);
-            addTaskForm.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -27,11 +22,18 @@ namespace My_Daily_Tasks
             CreateDataGridView();
         }
 
+        private void ButtonAddTask_Click(object sender, EventArgs e)
+        {
+            AddTaskForm addTaskForm = new AddTaskForm(dataGridViewTasks, today);
+            addTaskForm.Show();
+        }
+
         private void ButtonReset_Click(object sender, EventArgs e)
         {
             dataGridViewTasks.DataSource = ReturnTasks(today);
             dataGridViewTasks.Update();
             dataGridViewTasks.Refresh();
+            taskCompleted = 0;
         }
 
         private void DataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,6 +41,7 @@ namespace My_Daily_Tasks
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;
+                taskCompleted++;
             }
 
             if (e.ColumnIndex == 1 && e.RowIndex >= 0)
