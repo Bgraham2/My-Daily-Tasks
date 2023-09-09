@@ -30,35 +30,50 @@ namespace My_Daily_Tasks
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTasksCompleted));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBoxConfetti = new System.Windows.Forms.PictureBox();
+            this.labelComplete = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfetti)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxConfetti
             // 
-            this.pictureBox1.Image = global::My_Daily_Tasks.Properties.Resources.confetti;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxConfetti.Image = global::My_Daily_Tasks.Properties.Resources.confetti;
+            this.pictureBoxConfetti.Location = new System.Drawing.Point(-1, -2);
+            this.pictureBoxConfetti.Name = "pictureBoxConfetti";
+            this.pictureBoxConfetti.Size = new System.Drawing.Size(607, 306);
+            this.pictureBoxConfetti.TabIndex = 0;
+            this.pictureBoxConfetti.TabStop = false;
+            // 
+            // labelComplete
+            // 
+            this.labelComplete.AutoSize = true;
+            this.labelComplete.Font = new System.Drawing.Font("Lucida Handwriting", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComplete.Location = new System.Drawing.Point(55, 33);
+            this.labelComplete.Name = "labelComplete";
+            this.labelComplete.Size = new System.Drawing.Size(482, 36);
+            this.labelComplete.TabIndex = 1;
+            this.labelComplete.Text = "Congrats All Tasks Completed! ";
             // 
             // AllTasksCompleted
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(605, 303);
+            this.Controls.Add(this.labelComplete);
+            this.Controls.Add(this.pictureBoxConfetti);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AllTasksCompleted";
             this.Text = "All Tasks Completed";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfetti)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxConfetti;
+        private System.Windows.Forms.Label labelComplete;
     }
 }
