@@ -32,6 +32,7 @@ namespace My_Daily_Tasks
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTasksCompleted));
             this.pictureBoxConfetti = new System.Windows.Forms.PictureBox();
             this.labelComplete = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfetti)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,12 +55,25 @@ namespace My_Daily_Tasks
             this.labelComplete.TabIndex = 1;
             this.labelComplete.Text = "Congrats All Tasks Completed! ";
             // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonClose.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.Location = new System.Drawing.Point(249, 254);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(113, 37);
+            this.buttonClose.TabIndex = 2;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
             // AllTasksCompleted
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(605, 303);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelComplete);
             this.Controls.Add(this.pictureBoxConfetti);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -75,5 +89,6 @@ namespace My_Daily_Tasks
 
         private System.Windows.Forms.PictureBox pictureBoxConfetti;
         private System.Windows.Forms.Label labelComplete;
+        private System.Windows.Forms.Button buttonClose;
     }
 }
