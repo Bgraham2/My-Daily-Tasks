@@ -14,25 +14,27 @@ namespace My_Daily_Tasks
             sqlConnection.Open();
         }
 
-        public void WriteNewTask(String taskName, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday)
+        public int WriteNewTask(String taskName, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday)
         {
             string sql = "INSERT INTO TASKS VALUES(" + "'" + taskName + "'" + "," + monday + "," + tuesday + "," + wednesday + "," + thursday + "," + friday + "," + saturday + "," + sunday + ")";
-            DBInteraction(sql);
+            return DBInteraction(sql);
         }
 
-        public void DeleteTask(String taskName)
+        public int DeleteTask(String taskName)
         {
             string sql = "DELETE FROM TASKS WHERE TaskName='" + taskName + "'";
-            DBInteraction(sql);
+            return DBInteraction(sql);
+            
         }
 
-        private void DBInteraction(String sql)
+        private int DBInteraction(String sql)
         {
             SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
             sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
-            sqlDataAdapter.InsertCommand.ExecuteNonQuery();
+            int success = sqlDataAdapter.InsertCommand.ExecuteNonQuery();
             sqlCommand.Dispose();
             sqlConnection.Close();
+            return success;
         }
 
         public DataTable GetTasks(String date)

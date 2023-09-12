@@ -9,7 +9,7 @@ namespace My_Daily_Tasks
     {
         private readonly String today = DateTime.Today.DayOfWeek.ToString();
         private int taskCompleted = 0;
-        private TasksComplete complete = new TasksComplete();
+        private readonly TasksComplete complete = new TasksComplete();
 
         public MainForm()
         {
