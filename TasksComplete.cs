@@ -13,16 +13,12 @@ namespace My_Daily_Tasks
 
         }
 
-        public int AllTasksComplete(int tasks, int tasksCompleted)
+        public void AllTasksComplete(int tasks, int tasksCompleted)
         {
             if (tasks == tasksCompleted)
             {
                 AllTasksCompleted all = new AllTasksCompleted();
                 all.Show();
-                return 1;
-            } else
-            {
-                return -1;
             }
         }
     }
