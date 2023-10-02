@@ -8,22 +8,26 @@ namespace My_Daily_Tasks
     {
         private static readonly SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.DailyTasksConnectionString);
         private readonly SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public LocalDatabase()
         {
             sqlConnection.Open();
+            log.Info("Database connection sucessful.");
         }
 
         public void WriteNewTask(String taskName, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday)
         {
             string sql = "INSERT INTO TASKS VALUES(" + "'" + taskName + "'" + "," + monday + "," + tuesday + "," + wednesday + "," + thursday + "," + friday + "," + saturday + "," + sunday + ")";
             DBInteraction(sql);
+            log.Info("New task added to database and connection closed.");
         }
 
         public void DeleteTask(String taskName)
         {
             string sql = "DELETE FROM TASKS WHERE TaskName='" + taskName + "'";
             DBInteraction(sql);
+            log.Info("Task removed from the database and connection closed.");
         }
 
         private void DBInteraction(String sql)
@@ -45,6 +49,7 @@ namespace My_Daily_Tasks
             sqlReadDataAdapter.Fill(tasks);
             sqlReadDataAdapter.Dispose();
             sqlConnection.Close();
+            log.Info("DataTable returned and connection closed.");
 
             return tasks;
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace My_Daily_Tasks
 {
-    class NotificationHelpercs
+    class NotificationHelper
     {
     }
 }
