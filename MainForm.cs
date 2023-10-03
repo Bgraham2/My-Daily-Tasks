@@ -10,31 +10,38 @@ namespace My_Daily_Tasks
         private readonly String today = DateTime.Today.DayOfWeek.ToString();
         private int taskCompleted = 0;
         private readonly TasksComplete complete = new TasksComplete();
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public MainForm()
         {
             InitializeComponent();
         }
 
+        //Load form and create DataGridView.
         private void MainForm_Load(object sender, EventArgs e)
         {
             labelToday.Text = today;
             dataGridViewTasks.DataSource = ReturnTasks(today);
             CreateDataGridView();
+            log.Info("DataGridView created.");
         }
 
+        //Shows add task form when button clicked.
         private void ButtonAddTask_Click(object sender, EventArgs e)
         {
+            log.Info("Add new task clicked.");
             AddTaskForm addTaskForm = new AddTaskForm(dataGridViewTasks, today);
             addTaskForm.Show();
         }
 
+        //Buttom click reset task list and set counter to 0.
         private void ButtonReset_Click(object sender, EventArgs e)
         {
             dataGridViewTasks.DataSource = ReturnTasks(today);
             dataGridViewTasks.Update();
             dataGridViewTasks.Refresh();
             taskCompleted = 0;
+            log.Info("Task list complete track cleared.");
         }
 
         private void DataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
