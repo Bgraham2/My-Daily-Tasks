@@ -8,6 +8,7 @@ namespace My_Daily_Tasks
         private readonly DataGridView data;
         private readonly string today;
         private readonly Validation validation = new Validation();
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public AddTaskForm(DataGridView dataGridView, string today)
         {
@@ -33,6 +34,7 @@ namespace My_Daily_Tasks
             }
         }
 
+        //Saves a new task
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             int monday = checkBoxMonday.Checked ? 1 : 0;
@@ -53,7 +55,7 @@ namespace My_Daily_Tasks
                 UpdateDataGridView(database);
 
                 CreateMessage(textBoxTaskName.Text + " added to list!");
-
+                log.Info("Task Saved!");
                 Close();
             }
             else
@@ -71,6 +73,7 @@ namespace My_Daily_Tasks
             data.Refresh();
         }
 
+        //Checks all check boxes
         private void CheckBoxChecked()
         {
             checkBoxMonday.CheckState = CheckState.Checked;
@@ -83,6 +86,7 @@ namespace My_Daily_Tasks
             groupBoxDays.Enabled = false;
         }
 
+        //Unchecks all check boxes
         private void CheckBoxUnchecked()
         {
             checkBoxMonday.CheckState = CheckState.Unchecked;
@@ -95,6 +99,7 @@ namespace My_Daily_Tasks
             groupBoxDays.Enabled = true;
         }
 
+        //Creates a message box alerting the user if the task was added, or if there was a problem with the task name
         private void CreateMessage(String text)
         {
             MessageForm message = new MessageForm(text);

@@ -43,7 +43,10 @@ namespace My_Daily_Tasks
             taskCompleted = 0;
             log.Info("Task list complete track cleared.");
         }
-
+        
+        //Handles button clicks in the DataGridView
+        //The first option is the complete button click, it marks the task as complete and increments the comlete tracker integer
+        //The second option deletes the task from the list
         private void DataGridViewTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
@@ -51,6 +54,7 @@ namespace My_Daily_Tasks
                 dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;
                 taskCompleted++;
                 complete.AllTasksComplete(dataGridViewTasks.Rows.Count, taskCompleted);
+                log.Info("Task marked as complete, task counter set to: " + taskCompleted);
             }
 
             if (e.ColumnIndex == 1 && e.RowIndex >= 0)
@@ -60,15 +64,19 @@ namespace My_Daily_Tasks
                 dataGridViewTasks.DataSource = ReturnTasks(today);
                 dataGridViewTasks.Update();
                 dataGridViewTasks.Refresh();
+                log.Info("Task Deleted.");
             }
         }
 
+        //Fills datagridview.
         private DataTable ReturnTasks(String date)
         {
             LocalDatabase database = new LocalDatabase();
+            log.Info("DataTable returned.");
             return database.GetTasks(date);
         }
 
+        //sets datagridview properties
         private void CreateDataGridView()
         {
             DataGridViewColumn taskColumn = dataGridViewTasks.Columns[0];
