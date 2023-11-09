@@ -7,10 +7,11 @@ namespace My_Daily_Tasks
 {
     public partial class MainForm : Form
     {
-        private readonly String today = DateTime.Today.DayOfWeek.ToString();
+        private readonly string today = DateTime.Today.DayOfWeek.ToString();
         private int taskCompleted = 0;
         private readonly TasksComplete complete = new TasksComplete();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly NotificationHelper notification = new NotificationHelper();
 
         public MainForm()
         {
@@ -23,6 +24,7 @@ namespace My_Daily_Tasks
             labelToday.Text = today;
             dataGridViewTasks.DataSource = ReturnTasks(today);
             CreateDataGridView();
+            notification.StartNotifications();
             log.Info("DataGridView created.");
         }
 
@@ -53,7 +55,7 @@ namespace My_Daily_Tasks
             {
                 dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;
                 taskCompleted++;
-                complete.AllTasksComplete(dataGridViewTasks.Rows.Count, taskCompleted);
+                complete.AllTasksComplete(dataGridViewTasks.Rows.Count, taskCompleted, notification);
                 log.Info("Task marked as complete, task counter set to: " + taskCompleted);
             }
 
@@ -69,7 +71,7 @@ namespace My_Daily_Tasks
         }
 
         //Fills datagridview.
-        private DataTable ReturnTasks(String date)
+        private DataTable ReturnTasks(string date)
         {
             LocalDatabase database = new LocalDatabase();
             log.Info("DataTable returned.");

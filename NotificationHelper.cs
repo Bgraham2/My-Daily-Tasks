@@ -1,4 +1,5 @@
 ﻿using System.Timers;
+using System.Media;
 
 namespace My_Daily_Tasks
 {
@@ -6,7 +7,7 @@ namespace My_Daily_Tasks
     class NotificationHelper
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private Timer notification = new Timer();
+        private readonly Timer notification = new Timer();
 
         public NotificationHelper()
         {
@@ -23,7 +24,11 @@ namespace My_Daily_Tasks
 
         private void Notification(object source, ElapsedEventArgs e)
         {
-            
+            SoundPlayer soundPlayer = new SoundPlayer
+            {
+                SoundLocation = "Rage Against The Machine - Killing In the Name.mp3"
+            };
+            soundPlayer.Play();
         }
 
         public void StopNotifications()

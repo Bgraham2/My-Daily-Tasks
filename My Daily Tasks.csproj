@@ -159,6 +159,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DailyTasks.mdf</DependentUpon>
     </Content>
+    <Content Include="Rage Against The Machine - Killing In the Name.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\confetti.gif" />
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@ namespace My_Daily_Tasks
         //String value of the task name typed in the form.
         //The value is checked to make sure is not null, or it contains special characters.
         //The method returns a message if test fails, or returns "passed" is test passes.
-        public string ValidateTaskName(String task)
+        public string ValidateTaskName(string task)
         {
             if (task.Length == 0)
             {

@@ -16,21 +16,21 @@ namespace My_Daily_Tasks
             log.Info("Database connection sucessful.");
         }
 
-        public void WriteNewTask(String taskName, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday)
+        public void WriteNewTask(string taskName, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday, int sunday)
         {
             string sql = "INSERT INTO TASKS VALUES(" + "'" + taskName + "'" + "," + monday + "," + tuesday + "," + wednesday + "," + thursday + "," + friday + "," + saturday + "," + sunday + ")";
             DBInteraction(sql);
             log.Info("New task added to database and connection closed.");
         }
 
-        public void DeleteTask(String taskName)
+        public void DeleteTask(string taskName)
         {
             string sql = "DELETE FROM TASKS WHERE TaskName='" + taskName + "'";
             DBInteraction(sql);
             log.Info("Task removed from the database and connection closed.");
         }
 
-        private void DBInteraction(String sql)
+        private void DBInteraction(string sql)
         {
             SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
             sqlDataAdapter.InsertCommand = new SqlCommand(sql, sqlConnection);
@@ -39,7 +39,7 @@ namespace My_Daily_Tasks
             sqlConnection.Close();
         }
 
-        public DataTable GetTasks(String date)
+        public DataTable GetTasks(string date)
         {
             DataTable tasks = new DataTable();
 
