@@ -1,5 +1,4 @@
 ﻿using System.Timers;
-using System.Media;
 
 namespace My_Daily_Tasks
 {
@@ -24,11 +23,9 @@ namespace My_Daily_Tasks
 
         private void Notification(object source, ElapsedEventArgs e)
         {
-            SoundPlayer soundPlayer = new SoundPlayer
-            {
-                SoundLocation = "Rage Against The Machine - Killing In the Name.mp3"
-            };
-            soundPlayer.Play();
+            WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
+            player.URL = "Rage Against The Machine - Killing In the Name.mp3";
+            player.controls.play();
         }
 
         public void StopNotifications()
