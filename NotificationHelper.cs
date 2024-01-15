@@ -32,7 +32,7 @@ namespace My_Daily_Tasks
             int index = random.Next(songs.Length);
             WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer
             {
-                URL = songs[index]
+                URL = ""+ songs[index] +""
             };
             player.controls.play();
         }
