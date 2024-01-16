@@ -159,12 +159,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="21 Pilots - Heathens.mp3" />
-    <Content Include="Aerosmith - Eat the rich.mp3" />
-    <Content Include="Avenge Sevenfold - Hail to the king.mp3" />
-    <Content Include="Beatie Boys - Sabotage.mp3" />
+    <Content Include="Songs\21 Pilots - Heathens.mp3" />
+    <Content Include="Songs\Aerosmith - Eat the rich.mp3" />
+    <Content Include="Songs\Avenge Sevenfold - Hail to the king.mp3" />
+    <Content Include="Songs\Beatie Boys - Sabotage.mp3" />
     <Content Include="blue-task.ico" />
-    <Content Include="Cinderella - If You Don%27t Like It.mp3" />
+    <Content Include="Songs\Cinderella - If You Don%27t Like It.mp3" />
     <Content Include="DailyTasks.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -172,19 +172,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DailyTasks.mdf</DependentUpon>
     </Content>
-    <Content Include="Disturbed - Indestructible.mp3" />
-    <Content Include="Dokken - Mr Scary.mp3" />
-    <Content Include="Led Zeppelin - Immigrant Song.mp3" />
-    <Content Include="Megadeth - Symphony Of Destruction.mp3" />
-    <Content Include="Rage Against The Machine - Killing In the Name.mp3">
+    <Content Include="Songs\Disturbed - Indestructible.mp3" />
+    <Content Include="Songs\Dokken - Mr Scary.mp3" />
+    <Content Include="Songs\Led Zeppelin - Immigrant Song.mp3" />
+    <Content Include="Songs\Megadeth - Symphony Of Destruction.mp3" />
+    <Content Include="Songs\Rage Against The Machine - Killing In the Name.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Rage Against The Machine - Testify.mp3" />
-    <Content Include="Rammstein - Feuer Frei!.mp3" />
-    <Content Include="Ratt - Way Cool Jr..mp3" />
-    <Content Include="Savatage - Hall of the Mountain King.mp3" />
-    <Content Include="Slade - Run Run Away.mp3" />
-    <Content Include="The Cult - Fire Woman.mp3" />
+    <Content Include="Songs\Rage Against The Machine - Testify.mp3" />
+    <Content Include="Songs\Rammstein - Feuer Frei!.mp3" />
+    <Content Include="Songs\Ratt - Way Cool Jr..mp3" />
+    <Content Include="Songs\Savatage - Hall of the Mountain King.mp3" />
+    <Content Include="Songs\Slade - Run Run Away.mp3" />
+    <Content Include="Songs\The Cult - Fire Woman.mp3" />
     <None Include="Properties\confetti.gif" />
   </ItemGroup>
   <ItemGroup>

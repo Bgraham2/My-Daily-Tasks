@@ -30,9 +30,11 @@ namespace My_Daily_Tasks
         {
             Random random = new Random();
             int index = random.Next(songs.Length);
+            string song = songs[index];
+            log.Info("Notification playing");
             WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer
             {
-                URL = ""+ songs[index] +""
+                URL = "Songs\\" + song
             };
             player.controls.play();
         }
