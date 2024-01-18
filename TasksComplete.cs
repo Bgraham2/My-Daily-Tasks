@@ -1,5 +1,4 @@
-﻿
-namespace My_Daily_Tasks
+﻿namespace My_Daily_Tasks
 {
     class TasksComplete
     {

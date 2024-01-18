@@ -61,7 +61,7 @@ namespace My_Daily_Tasks
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(775, 168);
+            this.ClientSize = new System.Drawing.Size(771, 168);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelMessage);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
