@@ -28,7 +28,6 @@ namespace My_Daily_Tasks
 
         private void Notification(object source, ElapsedEventArgs e)
         {
-     
             log.Info("Notification playing" + songs[random.Next(songs.Length)]);
             WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer
             {
