@@ -28,12 +28,15 @@ namespace My_Daily_Tasks
 
         private void Notification(object source, ElapsedEventArgs e)
         {
-            log.Info("Notification playing" + songs[random.Next(songs.Length)]);
+            string song = songs[random.Next(songs.Length)];
+            log.Info("Notification playing" + song);
             WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer
             {
-                URL = songs[random.Next(songs.Length)]
+                URL = song
             };
             player.controls.play();
+            NotificationForm notificationForm = new NotificationForm(song, player);
+            notificationForm.Show();
         }
 
         public void StopNotifications()
