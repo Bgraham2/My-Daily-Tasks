@@ -11,7 +11,7 @@ namespace My_Daily_Tasks
         private int taskCompleted = 0;
         private readonly TasksComplete complete = new TasksComplete();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private readonly NotificationHelper notification = new NotificationHelper();
+        private readonly NotificationHelper notificationHelper = new NotificationHelper();
 
         public MainForm()
         {
@@ -24,7 +24,7 @@ namespace My_Daily_Tasks
             labelToday.Text = today;
             dataGridViewTasks.DataSource = ReturnTasks(today);
             CreateDataGridView();
-            notification.StartNotifications();
+            notificationHelper.StartNotifications();
             log.Info("DataGridView created.");
         }
 
@@ -55,7 +55,7 @@ namespace My_Daily_Tasks
             {
                 dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;
                 taskCompleted++;
-                complete.AllTasksComplete(dataGridViewTasks.Rows.Count, taskCompleted, notification);
+                complete.AllTasksComplete(dataGridViewTasks.Rows.Count, taskCompleted, notificationHelper);
                 log.Info("Task marked as complete, task counter set to: " + taskCompleted);
             }
 
