@@ -31,6 +31,7 @@ namespace My_Daily_Tasks
         {
             log.Info("Notification playing");
             player.URL = songs[random.Next(songs.Length)];
+            player.settings.volume = 50;
             player.controls.play();
         }
 
