@@ -22,7 +22,7 @@ namespace My_Daily_Tasks
         public void StartNotifications()
         {
             notificationTimer.Elapsed += new ElapsedEventHandler(Notification);
-            notificationTimer.Interval = 36000000;
+            notificationTimer.Interval = 3600000;
             notificationTimer.Enabled = true;
             log.Info("Notifications started.");
         }
