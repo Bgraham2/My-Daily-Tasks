@@ -34,6 +34,7 @@ namespace My_Daily_Tasks
             log.Info("Add new task clicked.");
             AddTaskForm addTaskForm = new AddTaskForm(dataGridViewTasks, today);
             addTaskForm.Show();
+            taskCompleted = addTaskForm.returnCounter;
         }
 
         //Buttom click reset task list and set counter to 0.
@@ -44,6 +45,7 @@ namespace My_Daily_Tasks
             dataGridViewTasks.Refresh();
             taskCompleted = 0;
             log.Info("Task list complete track cleared.");
+            notificationHelper.StartNotifications();
         }
         
         //Handles button clicks in the DataGridView
