@@ -1,7 +1,7 @@
 ﻿
 namespace My_Daily_Tasks
 {
-    partial class Form1
+    partial class Notifications
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,11 @@ namespace My_Daily_Tasks
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Notifications));
             this.labelSongTitle = new System.Windows.Forms.Label();
             this.trackBarVolume = new System.Windows.Forms.TrackBar();
             this.buttonStop = new System.Windows.Forms.Button();
+            this.labelVolume = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@ namespace My_Daily_Tasks
             // 
             this.labelSongTitle.AutoSize = true;
             this.labelSongTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSongTitle.Location = new System.Drawing.Point(291, 9);
+            this.labelSongTitle.Location = new System.Drawing.Point(134, 9);
+            this.labelSongTitle.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSongTitle.Name = "labelSongTitle";
             this.labelSongTitle.Size = new System.Drawing.Size(130, 27);
             this.labelSongTitle.TabIndex = 0;
@@ -48,30 +50,47 @@ namespace My_Daily_Tasks
             // 
             // trackBarVolume
             // 
-            this.trackBarVolume.Location = new System.Drawing.Point(260, 61);
+            this.trackBarVolume.Location = new System.Drawing.Point(16, 42);
+            this.trackBarVolume.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.trackBarVolume.Name = "trackBarVolume";
-            this.trackBarVolume.Size = new System.Drawing.Size(201, 45);
+            this.trackBarVolume.Size = new System.Drawing.Size(308, 45);
             this.trackBarVolume.TabIndex = 1;
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(325, 125);
+            this.buttonStop.Location = new System.Drawing.Point(16, 99);
+            this.buttonStop.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(75, 23);
+            this.buttonStop.Size = new System.Drawing.Size(385, 48);
             this.buttonStop.TabIndex = 2;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
-            // Form1
+            // labelVolume
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.labelVolume.AutoSize = true;
+            this.labelVolume.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVolume.Location = new System.Drawing.Point(338, 42);
+            this.labelVolume.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelVolume.Name = "labelVolume";
+            this.labelVolume.Size = new System.Drawing.Size(63, 17);
+            this.labelVolume.TabIndex = 3;
+            this.labelVolume.Text = "Volume";
+            // 
+            // Notifications
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(424, 170);
+            this.Controls.Add(this.labelVolume);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.trackBarVolume);
             this.Controls.Add(this.labelSongTitle);
+            this.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Name = "Notifications";
             this.Text = "Notifications";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
             this.ResumeLayout(false);
@@ -84,5 +103,6 @@ namespace My_Daily_Tasks
         private System.Windows.Forms.Label labelSongTitle;
         private System.Windows.Forms.TrackBar trackBarVolume;
         private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.Label labelVolume;
     }
 }

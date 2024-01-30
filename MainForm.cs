@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+//using System.Timers;
 using System.Windows.Forms;
 
 namespace My_Daily_Tasks
@@ -9,9 +10,9 @@ namespace My_Daily_Tasks
     {
         private readonly string today = DateTime.Today.DayOfWeek.ToString();
         private int taskCompleted = 0;
+        private readonly Timer notificationTimer = new Timer();
         private readonly TasksComplete complete = new TasksComplete();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private readonly NotificationHelper notificationHelper = new NotificationHelper();
 
         public MainForm()
         {
@@ -24,7 +25,7 @@ namespace My_Daily_Tasks
             labelToday.Text = today;
             dataGridViewTasks.DataSource = ReturnTasks(today);
             CreateDataGridView();
-            notificationHelper.StartNotifications();
+            StartNotifications();
             log.Info("DataGridView created.");
         }
 
@@ -45,7 +46,7 @@ namespace My_Daily_Tasks
             dataGridViewTasks.Refresh();
             taskCompleted = 0;
             log.Info("Task list complete track cleared.");
-            notificationHelper.StartNotifications();
+            
         }
         
         //Handles button clicks in the DataGridView
@@ -57,7 +58,7 @@ namespace My_Daily_Tasks
             {
                 dataGridViewTasks.Rows[e.RowIndex].Cells[2].Style.BackColor = Color.Green;
                 taskCompleted++;
-                complete.AllTasksComplete(dataGridViewTasks.Rows.Count, taskCompleted, notificationHelper);
+                complete.AllTasksComplete(dataGridViewTasks.Rows.Count, taskCompleted, notificationTimer);
                 log.Info("Task marked as complete, task counter set to: " + taskCompleted);
             }
 
@@ -117,6 +118,20 @@ namespace My_Daily_Tasks
             {
                 dataGridViewTasks.Columns.Add(deleteButtonColumn);
             }
+        }
+
+        private void StartNotifications()
+        {
+            notificationTimer.Tick += new EventHandler(Notification);
+            notificationTimer.Interval = 36000;
+            notificationTimer.Enabled = true;
+            log.Info("Notifications started.");
+        }
+
+        private void Notification(object source, EventArgs e)
+        {
+            Notifications n = new Notifications();
+            n.Show();
         }
     }
 }
