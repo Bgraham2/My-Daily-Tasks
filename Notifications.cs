@@ -24,9 +24,9 @@ namespace My_Daily_Tasks
             InitializeComponent();
             String song = songs[random.Next(songs.Length)];
             labelSongTitle.Text = song;
-            log.Info("Notification playing");
+            log.Info("Notification playing with volume: " + trackBarVolume.Value);
             player.URL = song;
-            //player.settings.volume = trackBarVolume.Value;
+            player.settings.volume = trackBarVolume.Value;
             player.controls.play();
         }
 

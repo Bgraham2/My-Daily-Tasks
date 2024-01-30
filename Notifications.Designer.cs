@@ -50,11 +50,15 @@ namespace My_Daily_Tasks
             // 
             // trackBarVolume
             // 
+            this.trackBarVolume.LargeChange = 20;
             this.trackBarVolume.Location = new System.Drawing.Point(16, 42);
             this.trackBarVolume.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.trackBarVolume.Maximum = 100;
             this.trackBarVolume.Name = "trackBarVolume";
             this.trackBarVolume.Size = new System.Drawing.Size(308, 45);
+            this.trackBarVolume.SmallChange = 5;
             this.trackBarVolume.TabIndex = 1;
+            this.trackBarVolume.Value = 50;
             // 
             // buttonStop
             // 
