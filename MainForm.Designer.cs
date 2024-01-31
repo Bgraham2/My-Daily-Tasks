@@ -56,7 +56,7 @@ namespace My_Daily_Tasks
             // 
             this.labelToday.AutoSize = true;
             this.labelToday.Font = new System.Drawing.Font("Lucida Handwriting", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelToday.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelToday.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelToday.Location = new System.Drawing.Point(225, 8);
             this.labelToday.Name = "labelToday";
             this.labelToday.Size = new System.Drawing.Size(109, 36);
@@ -114,7 +114,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(583, 466);
             this.Controls.Add(this.dataGridViewTasks);
             this.Controls.Add(this.buttonUpdate);

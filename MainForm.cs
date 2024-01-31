@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
-//using System.Timers;
 using System.Windows.Forms;
 
 namespace My_Daily_Tasks
@@ -35,7 +34,7 @@ namespace My_Daily_Tasks
             log.Info("Add new task clicked.");
             AddTaskForm addTaskForm = new AddTaskForm(dataGridViewTasks, today);
             addTaskForm.Show();
-            taskCompleted = addTaskForm.returnCounter;
+            taskCompleted = addTaskForm.ReturnCounter;
         }
 
         //Buttom click reset task list and set counter to 0.

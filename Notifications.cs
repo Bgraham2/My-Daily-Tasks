@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace My_Daily_Tasks
@@ -23,14 +16,14 @@ namespace My_Daily_Tasks
         {
             InitializeComponent();
             String song = songs[random.Next(songs.Length)];
-            labelSongTitle.Text = song;
+            labelSongTitle.Text = song.Substring(5);
             log.Info("Notification playing with volume: " + trackBarVolume.Value);
             player.URL = song;
             player.settings.volume = trackBarVolume.Value;
             player.controls.play();
         }
 
-        private void buttonStop_Click(object sender, EventArgs e)
+        private void ButtonStop_Click(object sender, EventArgs e)
         {
             player.controls.stop();
             Close();

@@ -9,7 +9,7 @@ namespace My_Daily_Tasks
         private readonly string today;
         private readonly Validation validation = new Validation();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public int returnCounter { get; set; }
+        public int ReturnCounter { get; set; }
 
         public AddTaskForm(DataGridView dataGridView, string today)
         {
@@ -57,7 +57,7 @@ namespace My_Daily_Tasks
 
                 CreateMessage(textBoxTaskName.Text + " added to list!");
                 log.Info("Task Saved!");
-                this.returnCounter = 0;
+                this.ReturnCounter = 0;
                 this.Close();
             }
             else

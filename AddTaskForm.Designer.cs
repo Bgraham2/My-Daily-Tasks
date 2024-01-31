@@ -50,7 +50,7 @@ namespace My_Daily_Tasks
             // 
             this.labelTaskName.AutoSize = true;
             this.labelTaskName.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTaskName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelTaskName.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelTaskName.Location = new System.Drawing.Point(12, 9);
             this.labelTaskName.Name = "labelTaskName";
             this.labelTaskName.Size = new System.Drawing.Size(149, 27);
@@ -70,7 +70,7 @@ namespace My_Daily_Tasks
             // 
             this.checkBoxAllWeek.AutoSize = true;
             this.checkBoxAllWeek.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxAllWeek.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxAllWeek.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.checkBoxAllWeek.Location = new System.Drawing.Point(406, 8);
             this.checkBoxAllWeek.Name = "checkBoxAllWeek";
             this.checkBoxAllWeek.Size = new System.Drawing.Size(130, 31);
@@ -89,7 +89,7 @@ namespace My_Daily_Tasks
             this.groupBoxDays.Controls.Add(this.checkBoxTuesday);
             this.groupBoxDays.Controls.Add(this.checkBoxMonday);
             this.groupBoxDays.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDays.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBoxDays.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBoxDays.Location = new System.Drawing.Point(12, 45);
             this.groupBoxDays.Name = "groupBoxDays";
             this.groupBoxDays.Size = new System.Drawing.Size(800, 75);
@@ -198,7 +198,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.SystemColors.MenuText;
             this.ClientSize = new System.Drawing.Size(818, 181);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSave);
