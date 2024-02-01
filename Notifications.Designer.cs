@@ -41,7 +41,7 @@ namespace My_Daily_Tasks
             // 
             this.labelSongTitle.AutoSize = true;
             this.labelSongTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSongTitle.Location = new System.Drawing.Point(134, 9);
+            this.labelSongTitle.Location = new System.Drawing.Point(16, 9);
             this.labelSongTitle.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSongTitle.Name = "labelSongTitle";
             this.labelSongTitle.Size = new System.Drawing.Size(130, 27);
