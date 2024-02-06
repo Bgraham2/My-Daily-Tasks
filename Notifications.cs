@@ -16,7 +16,7 @@ namespace My_Daily_Tasks
         {
             InitializeComponent();
             String song = songs[random.Next(songs.Length)];
-            labelSongTitle.Text = song.Substring(5);
+            labelSongTitle.Text = song.Substring(6, song.Length - 3);
             log.Info("Notification playing with volume: " + trackBarVolume.Value);
             player.URL = song;
             player.settings.volume = trackBarVolume.Value;
@@ -27,6 +27,11 @@ namespace My_Daily_Tasks
         {
             player.controls.stop();
             Close();
+        }
+
+        private void trackBarVolume_Scroll(object sender, EventArgs e)
+        {
+            player.settings.volume = trackBarVolume.Value;
         }
     }
 }

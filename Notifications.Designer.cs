@@ -50,6 +50,7 @@ namespace My_Daily_Tasks
             // 
             // trackBarVolume
             // 
+            this.trackBarVolume.BackColor = System.Drawing.SystemColors.Control;
             this.trackBarVolume.LargeChange = 20;
             this.trackBarVolume.Location = new System.Drawing.Point(16, 42);
             this.trackBarVolume.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -59,6 +60,7 @@ namespace My_Daily_Tasks
             this.trackBarVolume.SmallChange = 5;
             this.trackBarVolume.TabIndex = 1;
             this.trackBarVolume.Value = 50;
+            this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
             // 
             // buttonStop
             // 
@@ -86,6 +88,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(424, 170);
             this.Controls.Add(this.labelVolume);
             this.Controls.Add(this.buttonStop);
