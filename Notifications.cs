@@ -7,6 +7,7 @@ namespace My_Daily_Tasks
     public partial class Notifications : Form
     {
         private static readonly string path = "Songs\\";
+        //TODO get directory sometimes returns hidden folders
         private static readonly string[] songs = Directory.GetFiles(path);
         private readonly WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);

@@ -41,14 +41,14 @@ namespace My_Daily_Tasks
             // 
             // buttonAddTask
             // 
-            this.buttonAddTask.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonAddTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.buttonAddTask.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddTask.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAddTask.Location = new System.Drawing.Point(414, 415);
+            this.buttonAddTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonAddTask.Location = new System.Drawing.Point(372, 415);
             this.buttonAddTask.Name = "buttonAddTask";
-            this.buttonAddTask.Size = new System.Drawing.Size(152, 37);
+            this.buttonAddTask.Size = new System.Drawing.Size(194, 37);
             this.buttonAddTask.TabIndex = 0;
-            this.buttonAddTask.Text = "Add a New Task";
+            this.buttonAddTask.Text = "Add New Task";
             this.buttonAddTask.UseVisualStyleBackColor = false;
             this.buttonAddTask.Click += new System.EventHandler(this.ButtonAddTask_Click);
             // 
@@ -56,7 +56,7 @@ namespace My_Daily_Tasks
             // 
             this.labelToday.AutoSize = true;
             this.labelToday.Font = new System.Drawing.Font("Lucida Handwriting", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelToday.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.labelToday.Location = new System.Drawing.Point(225, 8);
             this.labelToday.Name = "labelToday";
             this.labelToday.Size = new System.Drawing.Size(109, 36);
@@ -65,9 +65,9 @@ namespace My_Daily_Tasks
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.buttonUpdate.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonUpdate.Location = new System.Drawing.Point(12, 415);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(152, 37);
@@ -82,7 +82,7 @@ namespace My_Daily_Tasks
             this.dataGridViewTasks.AllowUserToDeleteRows = false;
             this.dataGridViewTasks.AllowUserToResizeColumns = false;
             this.dataGridViewTasks.AllowUserToResizeRows = false;
-            this.dataGridViewTasks.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.dataGridViewTasks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,12 +114,13 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(583, 466);
             this.Controls.Add(this.dataGridViewTasks);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.labelToday);
             this.Controls.Add(this.buttonAddTask);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "My Daily Tasks";

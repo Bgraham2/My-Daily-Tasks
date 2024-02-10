@@ -41,6 +41,7 @@ namespace My_Daily_Tasks
             // 
             this.labelSongTitle.AutoSize = true;
             this.labelSongTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSongTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.labelSongTitle.Location = new System.Drawing.Point(16, 9);
             this.labelSongTitle.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSongTitle.Name = "labelSongTitle";
@@ -50,7 +51,7 @@ namespace My_Daily_Tasks
             // 
             // trackBarVolume
             // 
-            this.trackBarVolume.BackColor = System.Drawing.SystemColors.Control;
+            this.trackBarVolume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.trackBarVolume.LargeChange = 20;
             this.trackBarVolume.Location = new System.Drawing.Point(16, 42);
             this.trackBarVolume.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -59,24 +60,27 @@ namespace My_Daily_Tasks
             this.trackBarVolume.Size = new System.Drawing.Size(308, 45);
             this.trackBarVolume.SmallChange = 5;
             this.trackBarVolume.TabIndex = 1;
-            this.trackBarVolume.Value = 50;
+            this.trackBarVolume.Value = 25;
             this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
             // 
             // buttonStop
             // 
+            this.buttonStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.buttonStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonStop.Location = new System.Drawing.Point(16, 99);
             this.buttonStop.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(385, 48);
             this.buttonStop.TabIndex = 2;
             this.buttonStop.Text = "Stop";
-            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.UseVisualStyleBackColor = false;
             this.buttonStop.Click += new System.EventHandler(this.ButtonStop_Click);
             // 
             // labelVolume
             // 
             this.labelVolume.AutoSize = true;
             this.labelVolume.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.labelVolume.Location = new System.Drawing.Point(338, 42);
             this.labelVolume.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelVolume.Name = "labelVolume";
@@ -88,7 +92,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(424, 170);
             this.Controls.Add(this.labelVolume);
             this.Controls.Add(this.buttonStop);

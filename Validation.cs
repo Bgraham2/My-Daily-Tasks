@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace My_Daily_Tasks
 {
@@ -21,7 +22,7 @@ namespace My_Daily_Tasks
                 log.Error("Task name failed validation because task name is blank.");
                 return "Task name field can't be empty!";
             }
-            else if (task.Any(ch => ! char.IsLetterOrDigit(ch)))
+            else if (!Regex.IsMatch(task, @"^[\d \w \s]+$"))
             {
                 log.Error("Task name failed validation becaused task name contains special characters.");
                 return "Task name can't contain special characters!";

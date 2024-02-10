@@ -49,7 +49,7 @@ namespace My_Daily_Tasks
             // 
             this.labelComplete.AutoSize = true;
             this.labelComplete.Font = new System.Drawing.Font("Lucida Handwriting", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelComplete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.labelComplete.Location = new System.Drawing.Point(55, 33);
             this.labelComplete.Name = "labelComplete";
             this.labelComplete.Size = new System.Drawing.Size(482, 36);
@@ -58,8 +58,9 @@ namespace My_Daily_Tasks
             // 
             // buttonClose
             // 
-            this.buttonClose.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.buttonClose.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonClose.Location = new System.Drawing.Point(249, 254);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(113, 37);
@@ -72,7 +73,7 @@ namespace My_Daily_Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(605, 303);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelComplete);
