@@ -2,6 +2,7 @@
 
 A small windows form app written in C# to help me remember routine daily or weekly tasks
 
-Testing TODO:
+Aplpha testing 2/13/24
 
-directory get sometimes gets hidden folders 
+Issues Found:
+
