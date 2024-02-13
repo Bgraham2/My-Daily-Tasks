@@ -7,17 +7,15 @@ namespace My_Daily_Tasks
     public partial class Notifications : Form
     {
         private static readonly string path = "Songs\\";
-        //TODO get directory sometimes returns hidden folders
-        private static readonly string[] songs = Directory.GetFiles(path);
+        private static readonly string[] songs = Directory.GetFiles(path, "*.mp3");
         private readonly WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly Random random = new Random();
-
+       
         public Notifications()
         {
             InitializeComponent();
             String song = songs[random.Next(songs.Length)];
-            log.Debug(song.Length - 2);
             labelSongTitle.Text = song.Substring(6, song.Length - 10);
             log.Info("Notification playing with volume: " + trackBarVolume.Value);
             player.URL = song;
@@ -31,7 +29,7 @@ namespace My_Daily_Tasks
             Close();
         }
 
-        private void trackBarVolume_Scroll(object sender, EventArgs e)
+        private void TrackBarVolume_Scroll(object sender, EventArgs e)
         {
             player.settings.volume = trackBarVolume.Value;
         }

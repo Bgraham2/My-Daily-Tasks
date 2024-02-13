@@ -122,7 +122,7 @@ namespace My_Daily_Tasks
         private void StartNotifications()
         {
             notificationTimer.Tick += new EventHandler(Notification);
-            notificationTimer.Interval = 3600000;
+            notificationTimer.Interval = 3600000 / 2;
             notificationTimer.Enabled = true;
             log.Info("Notifications started.");
         }

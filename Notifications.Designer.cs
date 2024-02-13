@@ -61,7 +61,7 @@ namespace My_Daily_Tasks
             this.trackBarVolume.SmallChange = 5;
             this.trackBarVolume.TabIndex = 1;
             this.trackBarVolume.Value = 25;
-            this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
+            this.trackBarVolume.Scroll += new System.EventHandler(this.TrackBarVolume_Scroll);
             // 
             // buttonStop
             // 
