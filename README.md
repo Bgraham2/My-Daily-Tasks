@@ -5,4 +5,4 @@ A small windows form app written in C# to help me remember routine daily or week
 Aplpha testing 2/13/24
 
 Issues Found:
-2/15 - Refresh does not restart notifications
+2/15 - Refresh does not restart notifications - Fixed
