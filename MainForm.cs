@@ -44,7 +44,7 @@ namespace My_Daily_Tasks
             dataGridViewTasks.Update();
             dataGridViewTasks.Refresh();
             taskCompleted = 0;
-            StartNotifications();
+            notificationTimer.Start();
             log.Info("Task list complete track cleared.");
             
         }
