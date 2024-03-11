@@ -26,6 +26,8 @@ namespace My_Daily_Tasks
             CreateDataGridView();
             StartNotifications();
             log.Info("DataGridView created.");
+            dataGridViewTasks.Update();
+            dataGridViewTasks.Refresh();
         }
 
         //Shows add task form when button clicked.
