@@ -10,4 +10,4 @@ Issues Found:
 2/15 - Refresh does not restart notifications - Fixed
 2/27 - Refresh starts second notification - Fixed
 
-2/27 - after opening app again complete button deletes on first use
+2/27 - after opening app again complete button deletes on first use - Fixed
