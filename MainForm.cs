@@ -7,7 +7,7 @@ namespace My_Daily_Tasks
 {
     public partial class MainForm : Form
     {
-        private readonly string today = DateTime.Today.DayOfWeek.ToString();
+        private string today = DateTime.Today.DayOfWeek.ToString();
         private int taskCompleted = 0;
         private readonly Timer notificationTimer = new Timer();
         private readonly TasksComplete complete = new TasksComplete();
@@ -42,6 +42,7 @@ namespace My_Daily_Tasks
         //Buttom click reset task list and set counter to 0.
         private void ButtonReset_Click(object sender, EventArgs e)
         {
+            today = DateTime.Today.DayOfWeek.ToString();
             dataGridViewTasks.DataSource = ReturnTasks(today);
             dataGridViewTasks.Update();
             dataGridViewTasks.Refresh();
