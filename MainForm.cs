@@ -43,6 +43,7 @@ namespace My_Daily_Tasks
         private void ButtonReset_Click(object sender, EventArgs e)
         {
             today = DateTime.Today.DayOfWeek.ToString();
+            labelToday.Text = today;
             dataGridViewTasks.DataSource = ReturnTasks(today);
             dataGridViewTasks.Update();
             dataGridViewTasks.Refresh();
